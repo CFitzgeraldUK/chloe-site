@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>KTH Calibration</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/base.css">  
+  <link rel="stylesheet" href="css/kth.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+  <script defer src="https://pyscript.net/alpha/pyscript.js">
+  </script>  
+  <link rel="icon" type="image/jpg" href="images\profile-pic.jpg">
+</head>
+
+<body>
+
+
+
+  <header> 
+    <div class="topnav" id="myTopnav">
+      <a href="index.html" class="active">Home</a>
+        <a href="links.html">Links</a>
+        <a href="downloads.html">Downloads</a>
+        <div class="dropdown">
+          <button-1 class="dropbtn">Tools
+            <i class="fa fa-caret-down"></i>
+          </button-1>
+          <div class="dropdown-content">
+           <a href="kth.html">K-Type Calibrator</a>
+           <a href="#">Tool 2</a>
+           <a href="#">Tool 3</a>
+         </div>
+        </div>
+        <script>
+          function myFunction() {
+           var x = document.getElementById("myTopnav");
+           if (x.className === "topnav") {
+              x.className += " responsive";
+           } else {
+             x.className = "topnav";
+           }
+          }
+        </script>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+  </header>
+
+
+
+
+
+  
+   <div class = "text">
+     <img src="images/kth.jpg" alt="ElmorLabs KTH (K-type Thermometer)"> 
+     <H1 class = "H1">KTH Calibration</H1>
+     <p1 class = "p1">This is a two point calibration calculator for K-Type thermocouples. It's used to work out the actual temperature based on 2 benchmark points and works reliably to convert the read temperature to the actual temperature. This page is primarily used by its creator Chloe (exa) so it wont be set up for other probes. Save the html file and edit the variables between the PyScript tags to use this yourself. Btw this page was made for mobile devices so if it looks wonky thats why :3</p1>
+   </div>
+   <div class= "container">
+     <input class="center" type="text" placeholder="Enter reading..." type="number" id="test-input"/>
+     <button id = "show_output" class = "button" type = "submit" pys-onClick="show_output" style = "display: inline">Go </button>
+     <div class= "output" id="output_div"></div>
+     <div class="form">
+       
+       <label class ="alabel" for = "RawLow" style ="top: 406px">RawLow</label>
+       <input class="a" value="-0.5" type= "number" id="RawLow" style = "top: 430px"/>
+
+       
+       <label class="blabel" for="RawHigh" style="top: 406px">RawHigh</label>
+       <input class="b" value="96" type= "number" id="RawHigh" style ="top: 430px"/>
+
+       <label class="clabel" for="ReferenceLow" style="top: 458px">RefLow</label>
+       <input class="c" value="0.01" type= "number" id="ReferenceLow" style="top: 482px"/>
+
+       <label class="dlabel" for="ReferenceHigh" style="top: 458px">RefHigh</label>
+       <input class="d" value="100" type= "number" id="ReferenceHigh"style="top:482px"/>
+     </div>
+   </div>
+  <div class = "instructions">
+     <H1 class = "H1">How To Use.</H1>
+     <p class = "p1">
+       1.Take two measurements with your sensor: I used freezing and boiling water. Record the two temperatures as "RawLow" and "RawHigh".
+     </p>
+     
+    <p>2. Repeat these measurements with your reference instrument.  Record these readings as "RefLow" and "RefHigh".
+     </p>
+ 
+    <p>3. Input these into the table above and then enter a temperature the probe is reading, click "Go" and the output box should show the actual temperature.
+Read more about this process <a href="https://learn.adafruit.com/calibrating-sensors/two-point-calibration">here (external link)</a>.</p>
+
+
+       
+     </p1>
+  </div>
+  <py-script>
+    from pyodide import JsProxy
+    from js import window
+    def show_output(*args, **kwargs):
+     output = Element("output_div")
+     try:
+       RawLow = float(Element('RawLow').element.value) 
+       RawHigh = float(Element('RawHigh').element.value)
+       ReferenceLow = float(Element('ReferenceLow').element.value)
+       ReferenceHigh = float(Element('ReferenceHigh').element.value)
+       RawRange = RawHigh - RawLow
+       ReferenceRange = ReferenceHigh - ReferenceLow
+       RawValue = float(Element('test-input').element.value)
+     #except ValueError:
+       #output.write("Invalid temperature")
+     except IndexError:
+       output.write("Temperature required")
+     try:
+       CorrectedValue = (((RawValue - RawLow) * ReferenceRange) / RawRange) + ReferenceLow
+       output.write(f"{round(CorrectedValue, 2)} °C")
+     except NameError: pass
+  </py-script>
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

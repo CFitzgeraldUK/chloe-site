@@ -1,0 +1,214 @@
+@import url("fonts.css");
+@import url("font-awesome/css/font-awesome.min.css");
+@import url("micons/micons.css");
+
+
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+body {
+    background-color: #151515;
+  }
+  img{
+    max-width: 600;
+    height: 500;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .text{
+    text-overflow: elipsis;
+    width: 80%;
+    max-width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    margin: 0;
+    -ms-transform: translate(-50%, +20%);
+    transform: translate(-50%, +20%);
+  }
+  .instructions {
+    text-overflow: elipsis;
+    width: 80%;
+    max-width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 1050px;
+    margin: 0;
+    -ms-transform: translate(-50%, +20%);
+    transform: translate(-50%, +20%);
+    }
+    
+  .H1 {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    text-decoration: underline;
+    text-decoration-color: #EA4C89;
+  }
+  p1{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    max-width: 50%;
+  } 
+  p{
+    text-align:center;
+    color: white;
+    font-size: 15px;
+  }
+  font {
+    font-family: verdana;
+    font-size: 20px;
+    color: white;
+    box-align: center;
+    }
+ 
+  a{
+    text-decoration: underline;
+    text-decoration-color: #EA4C89;
+  }
+  .button {
+    background-color: #EA4C89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button:hover,
+  .button:focus {
+    background-color: #F082AC;
+  }
+  
+  #test-input {
+    background-color: #4d4d4d;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+    width: 325px;
+    padding: 16px 20px;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  .container{
+    position: relative;
+    font-size: 18px;
+  }
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 900px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .output {
+    margin: 0;
+    position: absolute;
+    top: 975px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .button {
+    margin-left: 50%;
+    position: absolute;
+    top: 900px;
+    left: 125px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+   
+  #output_div {
+    background-color: #4d4d4d;
+    color: white;
+    border: 2px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    margin: auto;
+    width: 200px;
+    text-align: center;
+    } 
+  
+
+  .form{
+    position: relative;
+    top: 350px;
+  }
+  
+  #RawLow, #RawHigh, #ReferenceLow, #ReferenceHigh{
+    background-color: #4d4d4d;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+    width: 75px;
+    padding: 8px 10px;
+    margin: 0 auto;
+  
+  }
+  .a, .alabel{
+    margin: 0 auto;
+    color: white;
+    position: absolute;
+    font-size: 12px;
+    left: calc(50% - 100px);
+    -ms-transform: translate(0%, -43%);
+    transform: translate(0%, -45%);
+  }
+  
+  .b, .blabel{
+    margin: 0 auto;
+    left: calc(50% + 25px);
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    -ms-transform: translate(0%, -43%);
+    transform: translate(0%, -45%);
+  }
+  
+  .c, .clabel{
+    margin: 0 auto;
+    position: absolute;
+    color: white;
+    left: calc(50% - 100px);
+    font-size: 12px;
+    -ms-transform: translate(0%, -43%);
+    transform: translate(0%, -45%);
+  }
+  
+  .d, .dlabel{
+    margin: 0 auto;
+    position: absolute;
+    color: white;
+    left: calc(50% + 25px);
+    font-size: 12px;
+    -ms-transform: translate(0%, -43%);
+    transform: translate(0%, -45%);
+  }
+  .alabel, .blabel, .clabel, .dlabel{
+    text-decoration: underline;
+    text-decoration-color: #EA4C89;
+  }
+  
+  
