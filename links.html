@@ -11,36 +11,33 @@
   <link rel="stylesheet" href="css/links.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="icon" type="image/jpg" href="images\profile-pic.jpg">
-  <header> 
 
-
-
-
-    <div class="topnav" id="myTopnav">
-      <a href="index.html" class="active">Home</a>
-        <a href="links.html">Links</a>
-        <a href="downloads.html">Downloads</a>
-        <div class="dropdown">
-          <button-1 class="dropbtn">Tools
-            <i class="fa fa-caret-down"></i>
-          </button-1>
-          <div class="dropdown-content">
-           <a href="kth.html">K-Type Calibrator</a>
-         </div>
+    <header> 
+        <div class="topnav" id="myTopnav">
+          <a href="index.html" class="active">Home</a>
+            <a href="links.html">Links</a>
+            <a href="downloads.html">Downloads</a>
+            <div class="dropdown">
+              <button-1 class="dropbtn">Tools
+                <i class="fa fa-caret-down"></i>
+              </button-1>
+              <div class="dropdown-content">
+               <a href="kth.html">K-Type Calibrator</a>
+             </div>
+            </div>
+            <script>
+              function myFunction() {
+               var x = document.getElementById("myTopnav");
+               if (x.className === "topnav") {
+                  x.className += " responsive";
+               } else {
+                 x.className = "topnav";
+               }
+              }
+            </script>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
-        <script>
-          function myFunction() {
-           var x = document.getElementById("myTopnav");
-           if (x.className === "topnav") {
-              x.className += " responsive";
-           } else {
-             x.className = "topnav";
-           }
-          }
-        </script>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-    </div>
-  </header>
+    </header>
 </head>
 
 
